@@ -29,7 +29,7 @@ public class product {
 	
 	//Метод ввода.
 	public void product_input() {
-		Scanner inpt = new Scanner(System.in);
+		Scanner inpt = new Scanner(System.in, "Cp1251");
 		System.out.print("Введите название товара: ");
 		product_name = inpt.nextLine();
 		System.out.print("Введите цену на товар: ");
@@ -43,5 +43,25 @@ public class product {
 		System.out.println("Название товара: " + product_name);
 		System.out.println("Стоимость товара: " + product_price);
 		System.out.println("Количество товара: " + product_count);
+	}
+
+	public float get_product_price(){
+		return product_price;
+	}
+
+	public int get_product_count(){
+		return product_count;
+	}
+
+	public void compare_products(product pr){
+		if (this.product_price > pr.product_price){
+			System.out.println(this.product_name + " - дороже");
+		}
+		else if (this.product_price < pr.product_price){
+			System.out.println(this.product_name + " - дешевле");
+		}
+		else{
+			System.out.println(" - одинаковы по цене");
+		}
 	}
 }

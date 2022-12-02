@@ -25,7 +25,7 @@ public class seller {
 	
 	//Метод ввода.
 	public void seller_input() {
-		Scanner inpt = new Scanner(System.in);
+		Scanner inpt = new Scanner(System.in, "Cp1251");
 		System.out.print("Введите имя/название продавца: ");
 		seller_name = inpt.nextLine();
 		System.out.print("Введите количество продаж: ");

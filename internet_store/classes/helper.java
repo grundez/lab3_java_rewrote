@@ -25,10 +25,10 @@ public class helper {
 	
 	//Метод ввода.
 	public void helper_input() {
-		Scanner inpt = new Scanner(System.in);
-		System.out.print("Введите продавца: ");
+		Scanner inpt = new Scanner(System.in, "Cp1251");
+		System.out.print("Введите помощника: ");
 		helper_name = inpt.nextLine();
-		System.out.print("Введите оценку продавца: ");
+		System.out.print("Введите оценку помощника: ");
 		helper_mark = inpt.nextDouble();
 		}
 

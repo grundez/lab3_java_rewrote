@@ -2,30 +2,35 @@ package classes;
 import java.util.Scanner;
 
 public class customer {
+	
+	public static int client_counts=0;
 	private int client_id;
 	private String client_FIO;
 
 	//Конструктор класса без параметров.
 	public customer() {
-		client_id = 0;
-		client_FIO = "Имя не указано.";
+		this.client_FIO = "Имя не указано.";
+		this.client_id = 0;
+		client_counts++;
 	}
 
 	//Конструктор класса с одним параметром.
-	public customer(int id) {
-		client_id = id;
-		client_FIO = "Имя не указано.";
+	public customer(String name) {
+		this.client_FIO = name;
+		this.client_id = 0;
+		client_counts++;
 	}
 	
 	//Конструктор класса со всеми параметрами.
 	public customer(int id, String name) {
-		client_id = id;
-		client_FIO = name;
+		this.client_id = id;
+		this.client_FIO = name;
+		client_counts++;
 	}
 	
 	//Метод ввода.
 	public void customer_input() {
-		Scanner inpt = new Scanner(System.in);
+		Scanner inpt = new Scanner(System.in, "Cp1251");
 		System.out.print("Введите ФИО клиента: ");
 		client_FIO = inpt.nextLine();
 		System.out.print("Введите id клиента: ");
@@ -36,5 +41,14 @@ public class customer {
 	public void customer_output() {
 		System.out.println("ID клиента: " + client_id);
 		System.out.println("ФИО клиента: " + client_FIO);
+		System.out.println("Количество клиентов: " + client_counts);
+	}
+
+	public static int get_client_counts(){
+		return client_counts;
+	}
+
+	public String trim_fio(){
+		return client_FIO.trim();
 	}
 }
