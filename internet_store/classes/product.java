@@ -29,11 +29,21 @@ public class product {
 	
 	//Метод ввода.
 	public void product_input() {
+		int price;
 		Scanner inpt = new Scanner(System.in, "Cp1251");
 		System.out.print("Введите название товара: ");
 		product_name = inpt.nextLine();
 		System.out.print("Введите цену на товар: ");
-		product_price = inpt.nextInt();
+		price = inpt.nextInt();
+		try{
+			if(price > 50000000 || price < 1) throw new Exception("Неправильная цена товара");	
+		}
+		catch(Exception ex){
+         	System.out.println(ex.getMessage());
+		}
+		finally{
+			product_price = price;
+		}
 		System.out.print("Введите количество товара: ");
 		product_count = inpt.nextInt();
 	}

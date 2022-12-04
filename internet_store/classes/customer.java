@@ -28,6 +28,11 @@ public class customer {
 		client_counts++;
 	}
 	
+	public void finalize() throws Throwable{
+		client_counts--;
+	}
+		
+	
 	//Метод ввода.
 	public void customer_input() {
 		Scanner inpt = new Scanner(System.in, "Cp1251");

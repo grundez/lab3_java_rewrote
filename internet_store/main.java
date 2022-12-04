@@ -67,10 +67,6 @@ public class main {
         System.out.println("\n");
 		
         int tb_i = table.get_table_counts(); //////////МАССИВ ЧЕРЕЗ КОНСТРУКТОРЫ
-        Table[0] = new table();
-        Table[1] = new table(customer3, product1);
-        Table[2] = new table(customer1, helper1, product2, seller3);
-        Table[0].table_input(); 
         
         table[] Table = new table[3];
         
@@ -96,12 +92,26 @@ public class main {
         System.out.println("Проверенная функция строки trim: " + cu.trim_fio());  
 
         helper_class Helper_class = new helper_class();
-        System.out.println("Проверка вспомогательного класса(колво клиентов) : " + Helper_class.get_client_counts_helper()); */
+        System.out.println("Проверка вспомогательного класса(колво клиентов) : " + Helper_class.get_client_counts_helper()); 
+        */
+        
+        
+        //product pr1 = new product();       
+        //product pr2 = new product(); 
+        //pr1.product_input();
+        //pr2.product_input();
 
-        product pr1 = new product();       //////////ПРОВЕРКА РАЗУМНОГО THIS
-        product pr = new product();
-        pr.product_input();
-        pr1.product_input();
-        pr1.compare_products(pr);
+        table[][] Table = new table[1][1];
+        int id=0;
+        for (int i=0; i < 1; i++){      //////////////////РАБОТА С МАССИВОМ ОБЪЕКТОВ
+            for (int j=0; j<1;j++){
+                id = i*10 + j+1;
+                System.out.println();
+			    Table[i][j] = new table();
+                Table[i][j].table_input();
+                System.out.println("Стоймость всего склада "+ id +" продавца: " + Table[i][j].get_deal_price());
+            }
+            System.out.println();
+		}
     }
 }
