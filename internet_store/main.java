@@ -1,3 +1,6 @@
+import java.util.SortedSet;
+import java.util.TreeSet;
+
 import classes.*;
 
 public class main {
@@ -106,18 +109,26 @@ public class main {
             }
             System.out.println();
 		}
+        System.out.println("Перегруз метода: " + pr1.price_calc(pr2));
+        System.out.println("Перегруз метода: " + pr1.price_calc(pr2, pr3));
         
         */
         
         product_more_info pr1 = new product_more_info(15000, "куртка", 1, 1500, "16", "12", "2022");  
         product pr2 = new product(1000, "шапка", 3);
-        product pr3 = new product(4000, "штаны", 2);
         
         //System.out.println("Цена товара: " + pr1.get_product_price() + "\nВес товара: " + pr1.get_weight() + "\nДата доставки: " + pr1.get_date());
         System.out.println(pr1); //вывод через toString()
         System.out.println(pr2); //вывод через toString()
         pr1.made_order(); //использование интерфейса для продукта
-        System.out.println("Перегруз метода производный: " + pr1.price_calc(pr2));
-        System.out.println("Перегруз метода базовый: " + pr1.price_calc(pr2, pr3));
+        
+
+        
+        ///////////КОНТЕЙНЕРЫ НА JAVA
+        SortedSet<String> product_cont = new TreeSet<>();
+        product_cont.add(pr1.get_product_name());
+        product_cont.add(pr2.get_product_name());
+
+        System.out.println(product_cont.toString());
     }
 }

@@ -6,7 +6,7 @@ public class product implements shopper{
 	protected String product_name;
 	protected int product_count;
 
-	//Конструктор класса без параметров.
+	//Конструкто р класса без параметров.
 	public product() {
 		product_price = 0;
 		product_name = "Нет имени";
@@ -103,17 +103,17 @@ public class product implements shopper{
 	
 	@Override
 	public void put_in() {
-		System.out.println("\nПоложить в корзину!");
+		System.out.println("\nПоложить в корзину!\n");
 	}
 
 	@Override
 	public void put_out() {
-		System.out.println("\nУдалить из корзины!");
+		System.out.println("\nУдалить из корзины!\n");
 	}
 
 	@Override
 	public void made_order() {
-		System.out.println("\nСделать заказ!");
+		System.out.println("\nСделать заказ!\n");
 	}
 
 	
