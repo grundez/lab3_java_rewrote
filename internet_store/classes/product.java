@@ -1,10 +1,10 @@
 package classes;
 import java.util.Scanner;
 
-public class product {
-	private float product_price;
-	private String product_name;
-	private int product_count;
+public class product implements shopper{
+	protected float product_price;
+	protected String product_name;
+	protected int product_count;
 
 	//Конструктор класса без параметров.
 	public product() {
@@ -26,6 +26,14 @@ public class product {
 		product_name = name;
 		product_count = count;
 	}
+	
+	//Конструктор для создания клона объекта
+	public product(product pr) {  // передача объекта конструктору
+		product_price = pr.product_price;
+		product_name = pr.product_name;
+		product_count = pr.product_count;
+	}
+
 	
 	//Метод ввода.
 	public void product_input() {
@@ -63,6 +71,10 @@ public class product {
 		return product_count;
 	}
 
+	public String get_product_name(){
+		return product_name;
+	}
+
 	public void compare_products(product pr){
 		if (this.product_price > pr.product_price){
 			System.out.println(this.product_name + " - дороже");
@@ -74,4 +86,35 @@ public class product {
 			System.out.println(" - одинаковы по цене");
 		}
 	}
+
+	public String toString() {
+        return "Название продукта: " + product_name + "\nКоличество продукта: " + product_count + "\nЦена продукта: " + product_price;
+    }
+	
+	
+	///для перегруза в производном классе
+	public double price_calc(product pr1, product pr2){
+        return pr1.product_price + pr2.product_price;
+    }
+	public double price_calc(product pr1){
+        return this.product_price + pr1.product_price;
+    }
+
+	
+	@Override
+	public void put_in() {
+		System.out.println("\nПоложить в корзину!");
+	}
+
+	@Override
+	public void put_out() {
+		System.out.println("\nУдалить из корзины!");
+	}
+
+	@Override
+	public void made_order() {
+		System.out.println("\nСделать заказ!");
+	}
+
+	
 }

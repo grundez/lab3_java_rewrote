@@ -37,4 +37,8 @@ public class helper {
 		System.out.println("Имя помощника: " + helper_name);
 		System.out.println("Оценка помощника: " + helper_mark);
 	}
+
+	public String toString() {
+        return "Имя консультанта: " + helper_name + "\nОценка продавца: " + helper_mark;
+    }
 }

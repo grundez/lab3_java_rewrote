@@ -93,14 +93,7 @@ public class main {
 
         helper_class Helper_class = new helper_class();
         System.out.println("Проверка вспомогательного класса(колво клиентов) : " + Helper_class.get_client_counts_helper()); 
-        */
         
-        
-        //product pr1 = new product();       
-        //product pr2 = new product(); 
-        //pr1.product_input();
-        //pr2.product_input();
-
         table[][] Table = new table[1][1];
         int id=0;
         for (int i=0; i < 1; i++){      //////////////////РАБОТА С МАССИВОМ ОБЪЕКТОВ
@@ -113,5 +106,18 @@ public class main {
             }
             System.out.println();
 		}
+        
+        */
+        
+        product_more_info pr1 = new product_more_info(15000, "куртка", 1, 1500, "16", "12", "2022");  
+        product pr2 = new product(1000, "шапка", 3);
+        product pr3 = new product(4000, "штаны", 2);
+        
+        //System.out.println("Цена товара: " + pr1.get_product_price() + "\nВес товара: " + pr1.get_weight() + "\nДата доставки: " + pr1.get_date());
+        System.out.println(pr1); //вывод через toString()
+        System.out.println(pr2); //вывод через toString()
+        pr1.made_order(); //использование интерфейса для продукта
+        System.out.println("Перегруз метода производный: " + pr1.price_calc(pr2));
+        System.out.println("Перегруз метода базовый: " + pr1.price_calc(pr2, pr3));
     }
 }

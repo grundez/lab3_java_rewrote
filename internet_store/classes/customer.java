@@ -56,4 +56,8 @@ public class customer {
 	public String trim_fio(){
 		return client_FIO.trim();
 	}
+
+	public String toString() {
+        return "Имя покупателя: " + client_FIO + "\nid покупателя: " + client_id;
+    }
 }

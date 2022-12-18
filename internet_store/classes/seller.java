@@ -42,4 +42,8 @@ public class seller {
 	public int get_sells() {
 		return seller_sells;
 	}
+
+	public String toString() {
+        return "Имя продавца/бренда: " + seller_name + "\nКоличество продаж: " + seller_sells;
+    }
 }
